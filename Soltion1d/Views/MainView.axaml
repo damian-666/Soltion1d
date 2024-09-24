@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Soltion1d.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Soltion1d.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+
+
+	  <Canvas>
+		  <ItemsControl Items = "{Binding Waves}">
+			  <ItemsControl.ItemTemplate>
+				  <DataTemplate>
+					  <Path Stroke="Blue" StrokeThickness="1" Data="{Binding Path.Data}" />
+				  </DataTemplate>
+			  </ItemsControl.ItemTemplate>
+		  </ItemsControl>
+	  </Canvas>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+
+
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+</UserControl>
